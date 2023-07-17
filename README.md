@@ -27,16 +27,16 @@ By default, go with 744 (rwxr--r--) or 754 (rwxr-xr--)
 
 #### 3 types of Parameter: 
 
-1. Variable
-2. Position Parameter
-3. Special Parameter
+	* Variable
+	* Position Parameter
+	* Special Parameter
 	
 **Variable:** Variable are the parameter that you can chnage value of. 
 
 #### Types of Variable 
 
-1. User defined variable
-2. Shell Variable 
+	* User defined variable
+ 	* Shell Variable 
 
 #### User defined variable
 
