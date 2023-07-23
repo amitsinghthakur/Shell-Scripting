@@ -83,17 +83,16 @@ When Bash receives command line, it will follow 6 steps to interpret.
 
 During the tokenisation, bash read the command line for unquoted metacharachters, and use them to divide the command into word and oprators.
 
-	**List of Metacharachters **
-	- Space
-	- Tab
-	- NewLine
-	- | 
-	- &
-	- ;
-	- (
-	- )
-	- <
-	- >
+	List of Metacharachters
+	*SpaceTab
+        *NewLine
+	*| 
+	*&
+	*;
+	*(
+	*)
+	*<
+	*>
  
 	
 **Words** : are tokens that do not contain unquoted metacharachters
