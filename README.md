@@ -65,3 +65,153 @@ Arithmatic Expansions Is used to perform mathmatical oprations
 
 **Syntax:** $(( expression ))
 		
+
+
+
+### How Bash Process Command Line
+
+When Bash receives command line, it will follow 6 steps to interpret.
+
+1. Tokenisation
+2. Command Identification
+3. Expansions 
+4. Quote Removal 
+5. Redirection 
+6. Execute
+
+#### 1.Tokenisation: Divide the command into word and oprators 
+
+During the tokenisation, bash read the command line for unquoted metacharachters, and use them to divide the command into word and oprators.
+
+	**List of Metacharachters **
+	- Space
+	- Tab
+	- NewLine
+	- | 
+	- &
+	- ;
+	- (
+	- )
+	- <
+	- >
+ 
+	
+**Words** : are tokens that do not contain unquoted metacharachters
+	
+
+#### 2. Command Identification : Bash will then break the command line down into simple and compound command.
+
+	**1. Simple command **: Set of word terminated by oprators
+		- The first word is command line 
+		- Subsequent words are taken as indivisual arguments to that command.
+		
+	**2. Oprators:** The Token that contain at least 1 unquoted metacharachters.
+	
+		**List of Control oprators 		List of Redirection oprators**
+			NewLine						<
+			|						>
+			||						<<
+			&						>>
+			&&						<&
+			;						>&
+			;;						>|
+			;&						<<-
+			|&						<>
+			(
+			)
+			
+	**Example **
+	echo $name > out    Here: Space and > unquoted metacharachters	
+	
+	**Example 1 **
+	echo a b c d echo 1 2 3  - Tokenisation 
+	
+	**Example 2**
+	echo a b c d; echo 1 2 3 
+	
+	This is interpreted as two simple commands because there is control oprator(;) that end the first command.
+ 
+	**Example 3**
+	echo $name > out   
+	Interpreted as one simple command, including redirection operator
+	
+	**Compound command :** Start with reserved word and are terminated by corresponding reserved word. 
+	
+	**Example**
+	
+	if [[2 -gt 1]];then
+	 echo "Welcome"
+	fi
+	
+
+#### 3. Expansions 
+
+	- Earliar stages are given higer precedence than later one.
+	- Same stages given equal precedence and processed from left to right.
+	
+	## Four Stage of Processing Expansions
+	
+	1. Brace Expansions
+	2. Parameter Expansions ==> Arithmatic Expansions ==> command Substitution ==> Tild Expansions ==> Word Splitting ==> Globbing 
+
+#### 4. Quote Removal 
+
+The Shell remove all unquoted backslashes, Single quote charachters and double quote charachters that did not result from shell expansion.
+
+	- echo "Hello" 
+	
+	**Result :** echo Hello 
+	
+	The double quote removed because they are not quoted do not result from expansion 
+	
+	- echo '"Hello"'
+	
+	**Result :** echo "Hello" 
+	
+	The double quote are retained, however because they are quoted by single quote.
+	
+	- echo \"Hello\" 
+	
+	**Result :** "Hello"
+	
+	The backslashes are removed, because they are unquoted and don't result from an expansion 
+	The double quote are retained, because they are quoted by ther preceding backslashes. 
+
+	- path="C:\Users\Amit\Documents"
+	
+	Result : echo C:\Users\Amit\Documents
+	
+#### 5. Redirection 
+
+Redirection Oprators to determine where the standard input, standard output and standard error data streams for the command should connect to 
+
+	1. Not All data stream 
+	2. A data stream can only connect to one location at a time 
+	3. Redirection processed from left to right
+	
+	**Example 1 **
+	command < file  : Redirect the containt of file to the standard input command.
+	
+	**Example 2**
+	command > file : Truncat the file and then the standard output of command to it
+	
+	**Example 3 **
+	command >> file  : Appends standard output of command to file.
+	
+	**Example 4**
+	command 2 > file : Truncat file and then redirects standard error of command to it. 
+	
+	**Example 5 **
+	command 2 >> file  : Appends standard error to a file 
+	
+	**Example 6 **
+	command 2 & > file  : Truncat file, and then redirects both standard output and standard error of command to it.
+	
+	**Example 7 **
+	command &>> file  : Appends both standard output and standard error of command to file.
+ 
+
+#### 6. Execute
+ 
+At this stage the shell has completed its processing of the command line and it now executes the command that have resulted from all the above steps.
+ 
