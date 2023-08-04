@@ -214,18 +214,20 @@ Redirection Oprators to determine where the standard input, standard output and 
 #### 6. Execute
  
 At this stage the shell has completed its processing of the command line and it now executes the command that have resulted from all the above steps.
+
+
  
 
 ### User Input 
 
-Postional Parameter : The Shell assigns number called positional parameter to each command-line arrgument that is eneterd ($1, $2, $3...)
+**Postional Parameter** : The Shell assigns number called positional parameter to each command-line arrgument that is eneterd ($1, $2, $3...)
 
-Example : myscript Amit /home/Amit Blue 
+**Example :** myscript Amit /home/Amit Blue 
 
-#!/bin/bash
-echo "My name is $1"
-echo "My home directory is $2"
-echo "My Favourite colour is $3" 
+		#!/bin/bash
+		echo "My name is $1"
+		echo "My home directory is $2"
+		echo "My Favourite colour is $3" 
 
 
 #### The Read command 
@@ -236,35 +238,36 @@ read variable
 
 #### Option Read Variable 
 
--p  : Promt to user about what information they must enter
--t : timeout if the user doesn't enter value within time second
--s : Prevent the input that the user enters from being shown into the terminal  
--N : Limit the user response to exactly charachters 
+	-p  : Promt to user about what information they must enter
+	-t : timeout if the user doesn't enter value within time second
+	-s : Prevent the input that the user enters from being shown into the terminal  
+	-N : Limit the user response to exactly charachters 
+ 
 
 #### Example :
 
-#!/bin/bash
-read -t 5 -p "Input your first name within 5 seconds: " name
-read -n 2 -p "Input your age (max 2 digits): " age
-read -s -N 5 -p "Enter your zip code (exactly 5 digits): " zipcode
-echo "$name, $age, $zipcode" >> data.csv
+		#!/bin/bash
+		read -t 5 -p "Input your first name within 5 seconds: " name
+		read -n 2 -p "Input your age (max 2 digits): " age
+		read -s -N 5 -p "Enter your zip code (exactly 5 digits): " zipcode
+		echo "$name, $age, $zipcode" >> data.csv
 
 #### Select Command 
 
 Select command provides the user with a dropdown menu to select from.
 User can select an option from list of oprations 
 
-PS3="Please select an option below: "
-select variable in options; do
-	commands...
-	break
-done
+		PS3="Please select an option below: "
+		select variable in options; do
+			commands...
+			break
+		done
 
 #### Example : 
 
-#!/bin/bash
-PS3="What is the day of the week?: "
-select day in mon tue wed thu fri sat sun; do
-	echo "The day of the week is $day"
-	break
-done
+		#!/bin/bash
+		PS3="What is the day of the week?: "
+		select day in mon tue wed thu fri sat sun; do
+			echo "The day of the week is $day"
+			break
+		done
