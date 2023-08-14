@@ -302,3 +302,10 @@ Operator	|			Example 	|				Meaning
 -eq		|	[ 2 -eq 2 ]			| successful if the two number are equal		
 -ne		|	[ 2 -ne 2 ]			| successful if the two number are Not equal
 =		|	[ $a = $b ]			| Successful if the two string are equal
+!=		|	[ $a != $b ]			| successful if the two string are not equal
+-z		|	[ -z$c ]			| successful if the string is empty
+-n		|	[ -n$c ]			| successful if the string is not empty
+-e 		|	[ -e /path/to/file ]		| successful if file path exist
+-f		|	[ -f /path/to/file ]		| successful if file path exist and is a regular file
+-d		|	[ -x /path/to/file ]		| successful if file path exist and is a directory
+-x		|	[ -x /path/to/file ]		| successful if file path exist and is a executeable file by current user.
