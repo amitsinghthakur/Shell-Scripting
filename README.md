@@ -287,3 +287,18 @@ User can select an option from list of oprations
 | 	&&		| command1 && command2 |	The Shell will only run command2 if command1 successful		|
 |    ||			| command1 || command2 |	The shell will only run command2 if command1 unsuccessful	|
 -------------------------------------------------------------------------------------------------------------------------
+
+
+#### Test Command 
+
+Test Command : a command that can be used in bash to compare diffrent pice of information. 
+
+Syntax :  [ Expresion ]
+
+#### Oprators To Use 
+
+Operator	|			Example 	|				Meaning 
+----------------|---------------------------------------|-------------------------------------------------------------
+-eq		|	[ 2 -eq 2 ]			| successful if the two number are equal		
+-ne		|	[ 2 -ne 2 ]			| successful if the two number are Not equal
+=		|	[ $a = $b ]			| Successful if the two string are equal
