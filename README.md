@@ -309,3 +309,51 @@ Operator	|			Example 	|				Meaning
 -f		|	[ -f /path/to/file ]		| successful if file path exist and is a regular file
 -d		|	[ -x /path/to/file ]		| successful if file path exist and is a directory
 -x		|	[ -x /path/to/file ]		| successful if file path exist and is a executeable file by current user.
+
+
+#### If Statments
+
+Start and End using reserved words "If" and "fi"
+
+check the exit status of command and only run the command if certaion condition is true 
+
+#### Syntax for if statements:
+
+		if test1; then 
+		
+				command  #Only run if test1 passes 
+		
+		elif test2; then 
+		
+				command  #Only run if test1 fail and test2 passes 
+			
+		elif testN; then 
+		
+				command  #Only run if All previous fail and testN passes 	
+				
+				
+		else 
+				command  #only run if all test fail 
+		
+		fi
+
+
+##### Example
+
+		#!/bin/bash
+		
+		read -p "Please enter a number" number
+		
+		if [ $number -gt 0 ]; then
+		
+		echo "Your number is greater than 0"
+		
+		elif [ $number -lt 0 ]; then
+		
+		echo "Your number is less than 0"
+		
+		else
+		
+		echo "Your number is 0!"
+		
+		fi
