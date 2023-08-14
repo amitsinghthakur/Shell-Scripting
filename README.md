@@ -280,10 +280,10 @@ User can select an option from list of oprations
 
 #### List Operators 
 
-| Operator	|	Example        |			Meaning 	   				|
-----------------|----------------------|------------------------------------------------------------------------|
-| & 		| command1 &  command2 |	Send command1 into background and run command2 in current shell |
-| ;		| command1 ; command2  | 	The Shell will only run command2 if command1 successful		|
-| &&		| command1 && command2 |	The Shell will only run command2 if command1 successful		|
-| || 		| command1 || command2 |	The shell will only run command2 if command1 unsuccessful	|
------------------------------------------------------------------------------------------------------------------
+| Operator		|	Example        |			Meaning 	   				|
+------------------------|----------------------|------------------------------------------------------------------------|
+| 	& 		| command1 &  command2 |	Send command1 into background and run command2 in current shell |
+| 	;		| command1 ; command2  | 	The Shell will only run command2 if command1 successful		|
+| 	&&		| command1 && command2 |	The Shell will only run command2 if command1 successful		|
+|    ||			| command1 || command2 |	The shell will only run command2 if command1 unsuccessful	|
+-------------------------------------------------------------------------------------------------------------------------
