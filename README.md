@@ -357,3 +357,49 @@ check the exit status of command and only run the command if certaion condition 
 		echo "Your number is 0!"
 		
 		fi
+
+
+### Case 
+
+Case statements provide us with an elegant way to implement branching logic.
+
+Case statements start and end using the reserved words "case" and "esac"
+
+
+##### Syntax for case statements
+
+		case "$variable" in # don't forget the $ and the double quotes!
+		pattern1)
+		Commands ...
+		;;
+		pattern2)
+		Commands ...
+		;;
+		patternN)
+		Commands ...
+		;;
+		*)
+		Commands ... # run these if no other pattern matches
+		;;
+		esac
+
+
+#### Example
+
+		#!/bin/bash
+		
+		read -p "Please enter a number: " number
+		
+		case "$number" in
+		
+		"") echo "You didn't enter anything!"
+		
+		[0-9]) echo "you have entered a single digit number";;
+		
+		[0-9][0-9]) echo "you have entered a two digit number";;
+		
+		[0-9][0-9][0-9]) echo "you have entered a three digit number";;
+		
+		*) echo "you have entered a number that is more than three digits";;
+		
+		esac
