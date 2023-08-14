@@ -271,3 +271,22 @@ User can select an option from list of oprations
 			echo "The day of the week is $day"
 			break
 		done
+
+### Logic
+
+List : When You Put one or more command on a given line 
+
+List Oprators : Control Oprators that enable us to create list of command that operat in a diffrent way
+
+#### List Operators 
+
+
+Operator				Example 					Meaning 
+
+& 				command1 &  command2 		Send command1 into background and run command2 in current shell 
+
+;				command1 ; command2 		The Shell will wait for command1 to complete before starting command2 
+
+&&				command1 && command2 		The Shell will only run command2 if command1 successful
+
+|| 				command1 || command2 		The shell will only run command2 if command1 unsuccessful
