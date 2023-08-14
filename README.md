@@ -286,4 +286,4 @@ User can select an option from list of oprations
 | ;		| command1 ; command2  | 	The Shell will only run command2 if command1 successful		|
 | &&		| command1 && command2 |	The Shell will only run command2 if command1 successful		|
 | || 		| command1 || command2 |	The shell will only run command2 if command1 unsuccessful	|
--------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
